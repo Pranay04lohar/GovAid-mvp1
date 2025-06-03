@@ -1,0 +1,14 @@
+Functionality:
+1.)schemes for you:
+Authentication --> person enters their details and based on that we provide schemes
+
+2.)Differentiation between center and state schemes, application mode: offline, online
+
+3.) live dynamic scraping hourly or weekly to update the schemes
+
+4.) Need of DB and backend:
+- when dynamic updates
+- user authentication
+
+
+5.) Pagination bar logic is flawed right now

@@ -1,0 +1,20 @@
+/backend/venv/
+/node_modules/
+/frontend/node_modules/
+venv/
+*.dll
+*.lib
+*.exe
+
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# OS
+.DS_Store
+Thumbs.db

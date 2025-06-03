@@ -1,0 +1,74 @@
+----------
+
+Scraping Approach for MVP
+1.Start with 2-3 Key Categories:
+
+Social Welfare (highest number of schemes)
+
+Education & Learning
+
+Women and Child
+
+2.Get 20-30 Schemes per Category:
+
+Gives you 60-90 total schemes for MVP
+
+Sufficient diversity without overwhelming initial development
+
+3.Extract Standard Fields:
+
+Scheme name
+
+Category/subcategory
+
+Eligibility criteria
+
+Benefits
+
+Application process
+
+Required documents
+
+FAQs
+
+------------------------------------
+22/05/25
+
+I went to myscheme website and found out the scheme based on the categories, now tell me how can we perform similar thing to our website but for not all 3450 schemes but somewhat around 1000 schemes covering these categories and as we are reducing the scheme sizes to more than 1/3 3450 to 1000 is there any way to scrap the most imortant 1000 schemes
+
+solution:
+Scrape a representative, high-quality subset of schemes (about 1000 out of 3450+), covering all the main categories shown in your screenshot.
+Prioritize the “most important” schemes.
+
+1. Scrape by Category
+Each category on the myscheme website likely has its own page or filter.
+You can:
+Visit each category page (e.g., https://www.myscheme.gov.in/categories/education-learning)
+Scrape the top N schemes from each category (e.g., top 50–100 per category)
+This ensures coverage across all categories.
+How to automate:
+Use Playwright to visit each category page.
+Collect scheme URLs from the first few pages of each category.
+Scrape details for those schemes.
+
+
+
+2. Prioritize “Most Important” Schemes
+What makes a scheme “important”?
+Appears at the top of the category page (likely sorted by relevance/popularity).
+Has more benefits, higher coverage, or is featured.
+You can also prioritize by:
+Number of views/likes (if available)
+Central government vs. state government
+Schemes with more detailed descriptions
+Automated approach:
+Scrape the first N schemes from each category page (the site likely sorts by importance/relevance by default).
+Optionally, add logic to filter out duplicates or very similar schemes.
+
+
+ Summary of Steps
+-List all category URLs (manually or by scraping).
+- For each category, scrape the first N pages (e.g., 5–10) to get scheme URLs.
+- Deduplicate the scheme URLs.
+- Scrape details for each unique scheme URL.
+- Stop when you reach ~1000 schemes.

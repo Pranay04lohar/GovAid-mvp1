@@ -1,0 +1,124 @@
+Correct code for scraping all the category scheme urls:
+
+import httpx
+import asyncio
+import json
+import os
+from playwright.async_api import async_playwright
+
+API_URL = "https://api.myscheme.gov.in/search/v4/schemes"
+CATEGORY = "Agriculture,Rural & Environment"
+OUTPUT_FILE = "output/agriculture_rural_environment_urls.json"
+
+async def get_x_api_key():
+    api_key = None
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        page = await browser.new_page()
+        
+        async def handle_request(request):
+            nonlocal api_key
+            headers = request.headers
+            if "x-api-key" in headers:
+                api_key = headers["x-api-key"]
+                
+        page.on("request", handle_request)
+        await page.goto("https://www.myscheme.gov.in")
+        await page.wait_for_timeout(2000)  # Wait for API calls
+        await browser.close()
+        
+    if not api_key:
+        raise Exception("Failed to extract x-api-key")
+    return api_key
+
+async def fetch_category_scheme_urls(category, output_file, api_key):
+    all_urls = set()
+    offset = 0
+    size = 10  # Results per page
+    
+    print(f"\nFetching schemes for category: {category}")
+    print("=" * 50)
+    
+    async with httpx.AsyncClient() as client:
+        while True:
+            try:
+                # Format query exactly as seen in browser
+                query = [{"identifier": "schemeCategory", "value": category}]
+                params = {
+                    "lang": "en",
+                    "q": json.dumps(query),
+                    "keyword": "",
+                    "sort": "",
+                    "from": str(offset),
+                    "size": str(size)
+                }
+                
+                headers = {
+                    "x-api-key": api_key,
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Firefox/138.0",
+                    "Origin": "https://www.myscheme.gov.in",
+                    "Referer": "https://www.myscheme.gov.in/",
+                    "Accept": "application/json, text/plain, */*"
+                }
+                
+                print(f"\nMaking API request with params: {params}")
+                resp = await client.get(API_URL, params=params, headers=headers)
+                resp.raise_for_status()
+                data = resp.json()
+                
+                # Check if we got a successful response
+                if data.get("status") != "Success":
+                    print(f"API returned error: {data.get('errorDescription')}")
+                    break
+                
+                # Extract scheme URLs from the response
+                if "data" in data and "hits" in data["data"] and "items" in data["data"]["hits"]:
+                    items = data["data"]["hits"]["items"]
+                    if not items:
+                        print("No more items found")
+                        break
+                        
+                    for item in items:
+                        if "fields" in item and "slug" in item["fields"]:
+                            slug = item["fields"]["slug"]
+                            url = f"https://www.myscheme.gov.in/schemes/{slug}"
+                            all_urls.add(url)
+                    
+                    print(f"Fetched {len(items)} schemes at offset {offset} (total: {len(all_urls)})")
+                    
+                    if len(items) < size:
+                        print("Received fewer items than requested, stopping pagination")
+                        break
+                        
+                    offset += size
+                else:
+                    print("Unexpected API response structure. Keys found:", list(data.keys()))
+                    break
+                    
+            except Exception as e:
+                print(f"Error fetching schemes: {e}")
+                break
+    
+    # Save URLs to file
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    with open(output_file, "w") as f:
+        json.dump(list(all_urls), f, indent=2)
+    
+    print(f"\nSaved {len(all_urls)} scheme URLs to {output_file}")
+    return list(all_urls)
+
+async def main():
+    try:
+        print("Extracting x-api-key...")
+        api_key = await get_x_api_key()
+        print(f"Extracted x-api-key: {api_key}")
+        
+        await fetch_category_scheme_urls(CATEGORY, OUTPUT_FILE, api_key)
+        
+    except KeyboardInterrupt:
+        print("\nScript interrupted by user")
+    except Exception as e:
+        print(f"Error: {e}")
+
+if __name__ == "__main__":
+    asyncio.run(main()) 

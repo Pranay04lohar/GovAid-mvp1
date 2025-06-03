@@ -1,0 +1,36 @@
+https://www.myscheme.gov.in/search/category/Agriculture,Rural%20&%20Environment
+https://www.myscheme.gov.in/search/category/Banking,Financial%20Services%20and%20Insurance
+https://www.myscheme.gov.in/search/category/Business%20&%20Entrepreneurship
+https://www.myscheme.gov.in/search/category/Education%20&%20Learning
+https://www.myscheme.gov.in/search/category/Health%20&%20Wellness
+https://www.myscheme.gov.in/search/category/Housing%20&%20Shelter
+https://www.myscheme.gov.in/search/category/Public%20Safety,Law%20&%20Justice
+https://www.myscheme.gov.in/search/category/Science,%20IT%20&%20Communications
+https://www.myscheme.gov.in/search/category/Skills%20&%20Employment
+https://www.myscheme.gov.in/search/category/Social%20welfare%20&%20Empowerment
+https://www.myscheme.gov.in/search/category/Sports%20&%20Culture
+https://www.myscheme.gov.in/search/category/Transport%20&%20Infrastructure
+https://www.myscheme.gov.in/search/category/Travel%20&%20Tourism
+https://www.myscheme.gov.in/search/category/Utility%20&%20Sanitation
+https://www.myscheme.gov.in/search/category/Women%20and%20Child
+
+
+
+
+[
+  {"name": "Agriculture, Rural & Environment", "url": "https://www.myscheme.gov.in/search/category/Agriculture,Rural%20&%20Environment","num_schemes": 100},
+  {"name": "Banking,Financial Services and Insurance", "url": "https://www.myscheme.gov.in/search/category/Banking,Financial%20Services%20and%20Insurance","num_schemes": 75},
+  {"name": "Business & Entrepreneurship", "url": "https://www.myscheme.gov.in/search/category/Business%20&%20Entrepreneurship","num_schemes": 100},
+  {"name": "Education & Learning", "url": "https://www.myscheme.gov.in/search/category/Education%20&%20Learning","num_schemes": 150},
+  {"name": "Health & Wellness", "url": "https://www.myscheme.gov.in/search/category/Health%20&%20Wellness","num_schemes": 75},
+  {"name": "Housing & Shelter", "url": "https://www.myscheme.gov.in/search/category/Housing%20&%20Shelter","num_schemes": 50},
+  {"name": "Public Safety,Law & Justice", "url": "https://www.myscheme.gov.in/search/category/Public%20Safety,Law%20&%20Justice","num_schemes": 10},
+  {"name": "Science, IT & Communications", "url": "https://www.myscheme.gov.in/search/category/Science,%20IT%20&%20Communications","num_schemes": 20},
+  {"name": "Skills & Employment", "url": "https://www.myscheme.gov.in/search/category/Skills%20&%20Employment","num_schemes": 75},
+  {"name": "Social welfare & Empowerment", "url": "https://www.myscheme.gov.in/search/category/Social%20welfare%20&%20Empowerment","num_schemes": 200},
+  {"name": "Sports & Culture", "url": "https://www.myscheme.gov.in/search/category/Sports%20&%20Culture","num_schemes": 50},
+  {"name": "Transport & Infrastructure", "url": "https://www.myscheme.gov.in/search/category/Transport%20&%20Infrastructure","num_schemes": 20},	
+  {"name": "Travel & Tourism", "url": "https://www.myscheme.gov.in/search/category/Travel%20&%20Tourism","num_schemes": 15},
+  {"name": "Utility & Sanitation", "url": "https://www.myscheme.gov.in/search/category/Utility%20&%20Sanitation","num_schemes": 15},
+  {"name": "Women and Child", "url": "https://www.myscheme.gov.in/search/category/Women%20and%20Child","num_schemes": 100},
+]

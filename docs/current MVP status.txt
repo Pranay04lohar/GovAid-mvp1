@@ -1,0 +1,37 @@
+1. Scrape All Scheme URLs by Category
+Script: fetch_all_scheme_urls.py
+Goal: Get a representative, high-quality set of scheme URLs for each category (as JSON files in output/).
+Status: ✅ (You’ve completed this!)
+
+
+2. Scrape Detailed Scheme Data
+Script: scraper.py
+Goal: For each scheme URL (from your output JSONs), extract all details (name, description, eligibility, benefits, docs, FAQs, etc.).
+How:
+Adapt scraper.py to read URLs from your output/ JSON files (instead of crawling the whole site).
+For each URL, scrape and save the data to your SQLite database (yojnabuddy.db).
+Status: 🟡 (You may need to tweak the script for batch processing from your URL lists.)
+
+3. Validate and Clean the Data
+Goal: Ensure your database has high-quality, non-duplicate, and complete scheme records.
+How:
+Run queries to check for missing fields, duplicates, or errors.
+Optionally, write a small script to export the DB to CSV/JSON for manual review.
+
+
+4. Build API Endpoints (Optional, but recommended)
+Goal: Serve scheme data to your frontend in a structured way.
+How:
+Use Flask, FastAPI, or Django to build REST API endpoints (e.g., /schemes, /schemes/<id>, /categories).
+These endpoints will query your SQLite DB and return JSON.
+
+
+5. Integrate with Frontend
+Goal: Display schemes, categories, and details in your frontend app.
+How:
+Fetch data from your backend API (or directly from the DB if your frontend is server-rendered).
+Build UI components for listing, searching, and viewing scheme details.
+6. Polish, Test, and Deploy
+Test the full pipeline: scraping → DB → API → frontend.
+Polish the UI/UX, add search/filter features, and handle edge cases.
+Deploy your backend and frontend (e.g., on Heroku, Vercel, or your own server).
