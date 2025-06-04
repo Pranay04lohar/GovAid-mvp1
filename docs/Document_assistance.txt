@@ -1,0 +1,128 @@
+official indian government website for ________
+
+10 sites, 5 FAQS each and their solutions
+
+Aadhaar Card: UIDAI
+
+PAN Card: https://incometaxindia.gov.in/Pages/tax-services/apply-for-pan.aspx
+
+Birth Certificate: 
+
+Passport : https://www.passportindia.gov.in/psp
+
+Driving Licence : https://parivahan.gov.in/parivahan//en/content/driving-licence-0
+
+Voter ID Card : https://voters.eci.gov.in/
+
+Ration Card: https://nfsa.gov.in/portal/ration_card_state_portals_aa
+
+Marriage Certificate: 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aadhar:
+1. Who is eligible to apply for an Aadhaar card?
+Any resident of India, including infants and elderly, can apply for Aadhaar. NRIs are eligible if they have resided in India for 182 days or more in the past 12 months
+2. What documents are required for Aadhaar enrolment?
+Proof of identity and proof of address are needed. Biometric data (fingerprints, iris scan, and photograph) are also collected
+3.How can I update or correct details in my Aadhaar card?
+Visit an Aadhaar Enrolment/Update Centre with supporting documents for the change. You can also update your address online through the UIDAI portal
+4.Is it safe to share my Aadhaar number?
+Only share your Aadhaar details when necessary, as advised by UIDAI, to prevent misuse
+5.How can I download my e-Aadhaar?
+You can download it from the UIDAI website using your enrolment ID or Aadhaar number and OTP verification
+
+PAN Card:
+1.Who can apply for a PAN card?
+Any Indian citizen or entity requiring financial transactions can apply. NRIs can also apply.
+2.What documents are required for a PAN card?
+Proof of identity, proof of address, and proof of date of birth are required. For instant e-PAN, only Aadhaar (with updated KYC) and a linked mobile number are needed.
+3.How can I apply for a PAN card online?
+Applications can be made via the Income Tax portal, NSDL, or UTIITSL websites. Instant e-PAN is available for Aadhaar holders.
+4.What should I do if my PAN card has errors or needs updating?
+Corrections or updates can be requested online by submitting supporting documents.
+5.Is it mandatory to link PAN with Aadhaar?
+Yes, linking PAN with Aadhaar is mandatory for filing income tax returns and other financial activities.
+
+Birth Certificate
+1.Why is a birth certificate important?
+It serves as legal proof of identity, age, and citizenship, and is required for school admission, passports, and other documents.
+2.How do I apply for a birth certificate in India?
+Register the birth at your local municipal office or online within 21 days of birth. Submit the required documents and application form.
+3.What documents are needed for a birth certificate?
+Hospital birth certificate, parents’ ID proofs, and address proof are commonly required.
+4.Can I apply for a birth certificate after 21 days?
+Yes, but a late fee applies and additional affidavits or permissions may be needed.
+5.How can I add a name or correct details in a birth certificate?
+Submit an application with supporting documents to the issuing authority. Name inclusion and corrections can be done both online and offline.
+
+Passport
+1.How do I apply for a new passport?
+Apply online at the Passport Seva portal, fill the application, upload documents, pay the fee, and schedule an appointment for document verification and biometrics.
+2.What documents are required for a passport?
+Proof of identity, address, date of birth, and citizenship. Additional documents may be needed for government employees or minors.
+3.How long is a passport valid?
+Generally, 10 years for adults and 5 years or until age 18 for minors.
+4.What should I do if my passport is lost or damaged?
+Apply for a re-issue of passport by submitting a new application with required documents and a police report if lost.
+5.Can I change my name or address in my passport?
+Yes, apply for a re-issue with supporting documents for the change.
+
+Driving Licence
+1.What is the minimum age to get a driving licence in India?
+You must be at least 18 years old to apply for a permanent driving licence.
+2.What is the process to get a driving licence?
+First, obtain a learner’s licence by passing a written test. After 30 days, apply for a permanent licence and pass the practical driving test.
+3.Is training from a driving school mandatory?
+While not always mandatory, it is recommended, especially for commercial licences.
+4.How long is a driving licence valid?
+Typically valid for 20 years or until the holder turns 50, whichever is earlier. Renewal is required thereafter.
+5.Can I update my details or renew my driving licence online?
+Yes, many states allow online renewal and updates via the Parivahan portal or state transport websites.
+
+
+Voter ID Card
+1.Who is eligible for a Voter ID card?
+Any Indian citizen aged 18 years or above.
+2.What documents are required for a Voter ID card?
+Proof of identity, address, age, and a recent passport-size photo.
+3.How can I apply for a Voter ID card?
+Apply online via the Election Commission website or offline at local election offices.
+4.How can I download my e-EPIC (digital Voter ID)?
+Download from the Voter Portal, NVSP, or Voter Helpline app using your EPIC number or reference number.
+5.Can I update my details on the Voter ID card?
+Yes, corrections or updates can be made online or offline with supporting documents.
+
+
+Ration Card
+1.What is a ration card used for?
+It allows eligible families to buy subsidized food grains and commodities under the Public Distribution System.
+2.Who can apply for a ration card?
+Households meeting state-specific eligibility criteria, usually based on income and family size.
+3.How do I apply for a ration card?
+Submit an application with required documents to the local Food and Civil Supplies office. Some states offer online applications.
+4.Can I add or remove family members from my ration card?
+Yes, members can be added or removed by submitting relevant documents and forms.
+5.Is Aadhaar linking mandatory for ration cards?
+Yes, linking Aadhaar is required to prevent duplication and ensure benefits reach eligible families.
+
+
+Marriage Certificate
+1.Why do I need a marriage certificate?
+It is legal proof of marriage, required for visas, bank accounts, and property claims.
+2.How do I apply for a marriage certificate?
+Apply at the local municipal office or Sub-Divisional Magistrate’s office with the marriage registration form and required documents.
+3.What documents are required?
+Proof of age and identity of both spouses, address proof, wedding invitation or photographs, and witnesses’ ID proofs.
+4.Can I get a marriage certificate online?
+Some states and cities offer online application and appointment booking for marriage registration.
+5.Can I correct details in my marriage certificate?
+Yes, corrections can be made by submitting an application with supporting documents to the issuing authority.
+
+
+
+
+
+
+
+

@@ -1,82 +1,111 @@
-
-import { FileText, Upload, Download, CheckCircle, Clock, Users } from 'lucide-react';
+import { useState } from 'react';
+import { IdCard, FileText, Car, Vote, CircleDot, Heart } from 'lucide-react';
 import Navbar from "@/components/Navbar";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import AadhaarFAQ from "@/components/AadhaarFAQ";
+import PANCardFAQ from "@/components/PANCardFAQ";
+import BirthCertificateFAQ from "@/components/BirthCertificateFAQ";
+import PassportFAQ from "@/components/PassportFAQ";
+import DrivingLicenceFAQ from "@/components/DrivingLicenceFAQ";
+import VoterIDFAQ from "@/components/VoterIDFAQ";
+import RationCardFAQ from "@/components/RationCardFAQ";
+import MarriageCertificateFAQ from "@/components/MarriageCertificateFAQ";
 
 const DocumentationAssistance = () => {
-  const documentServices = [
+  const [selectedDocument, setSelectedDocument] = useState<string | null>(null);
+
+  const popularDocuments = [
     {
-      id: "application-filing",
-      title: "Application Filing",
-      description: "Help with completing and filing government applications, permits, and licenses.",
+      id: "aadhaar-card",
+      title: "Aadhaar Card",
+      icon: <IdCard className="h-8 w-8" />,
+      color: "#2F855A",
+      bgColor: "#2F855A"
+    },
+    {
+      id: "pan-card", 
+      title: "PAN Card",
       icon: <FileText className="h-8 w-8" />,
-      color: "#2F855A"
+      color: "#ECC94B",
+      bgColor: "#ECC94B"
     },
     {
-      id: "document-preparation",
-      title: "Document Preparation",
-      description: "Assistance with preparing required documents and ensuring all paperwork is complete.",
-      icon: <Upload className="h-8 w-8" />,
-      color: "#3B82F6"
+      id: "birth-certificate",
+      title: "Birth Certificate", 
+      icon: <FileText className="h-8 w-8" />,
+      color: "#3B82F6",
+      bgColor: "#3B82F6"
     },
     {
-      id: "status-tracking",
-      title: "Application Status Tracking",
-      description: "Track the progress of your submitted applications and get real-time updates.",
-      icon: <Clock className="h-8 w-8" />,
-      color: "#F59E0B"
+      id: "passport",
+      title: "Passport",
+      icon: <FileText className="h-8 w-8" />,
+      color: "#10B981",
+      bgColor: "#10B981"
     },
     {
-      id: "document-verification",
-      title: "Document Verification",
-      description: "Verify the authenticity and completeness of your official documents.",
-      icon: <CheckCircle className="h-8 w-8" />,
-      color: "#10B981"
+      id: "driving-licence",
+      title: "Driving Licence",
+      icon: <Car className="h-8 w-8" />,
+      color: "#F59E0B",
+      bgColor: "#F59E0B"
+    },
+    {
+      id: "voter-id-card",
+      title: "Voter ID Card",
+      icon: <Vote className="h-8 w-8" />,
+      color: "#8B5CF6",
+      bgColor: "#8B5CF6"
+    },
+    {
+      id: "ration-card",
+      title: "Ration Card",
+      icon: <CircleDot className="h-8 w-8" />,
+      color: "#EF4444",
+      bgColor: "#EF4444"
+    },
+    {
+      id: "marriage-certificate",
+      title: "Marriage Certificate",
+      icon: <Heart className="h-8 w-8" />,
+      color: "#EC4899",
+      bgColor: "#EC4899"
     }
   ];
 
-  const commonDocuments = [
-    {
-      category: "Identity Documents",
-      documents: ["Birth Certificate", "Passport", "Driver's License", "Social Security Card"]
-    },
-    {
-      category: "Financial Documents",
-      documents: ["Tax Returns", "Bank Statements", "Income Certificates", "Property Documents"]
-    },
-    {
-      category: "Educational Documents",
-      documents: ["Degree Certificates", "Transcripts", "Diploma Verification", "Student ID"]
-    },
-    {
-      category: "Legal Documents",
-      documents: ["Court Orders", "Legal Notices", "Affidavits", "Power of Attorney"]
-    }
-  ];
+  const handleDocumentClick = (documentId: string) => {
+    setSelectedDocument(documentId);
+  };
 
-  const steps = [
-    {
-      step: 1,
-      title: "Submit Request",
-      description: "Fill out the documentation assistance request form with your requirements."
-    },
-    {
-      step: 2,
-      title: "Document Review",
-      description: "Our experts review your existing documents and identify missing items."
-    },
-    {
-      step: 3,
-      title: "Preparation Support",
-      description: "Get guided assistance in preparing and organizing all required documents."
-    },
-    {
-      step: 4,
-      title: "Filing & Submission",
-      description: "Complete the filing process with proper submission to relevant authorities."
-    }
-  ];
+  const handleBackToDocuments = () => {
+    setSelectedDocument(null);
+  };
+
+  // Show respective FAQ page based on selection
+  if (selectedDocument === "aadhaar-card") {
+    return <AadhaarFAQ onBack={handleBackToDocuments} />;
+  }
+  if (selectedDocument === "pan-card") {
+    return <PANCardFAQ onBack={handleBackToDocuments} />;
+  }
+  if (selectedDocument === "birth-certificate") {
+    return <BirthCertificateFAQ onBack={handleBackToDocuments} />;
+  }
+  if (selectedDocument === "passport") {
+    return <PassportFAQ onBack={handleBackToDocuments} />;
+  }
+  if (selectedDocument === "driving-licence") {
+    return <DrivingLicenceFAQ onBack={handleBackToDocuments} />;
+  }
+  if (selectedDocument === "voter-id-card") {
+    return <VoterIDFAQ onBack={handleBackToDocuments} />;
+  }
+  if (selectedDocument === "ration-card") {
+    return <RationCardFAQ onBack={handleBackToDocuments} />;
+  }
+  if (selectedDocument === "marriage-certificate") {
+    return <MarriageCertificateFAQ onBack={handleBackToDocuments} />;
+  }
 
   return (
     <div className="min-h-screen bg-cream">
@@ -86,95 +115,44 @@ const DocumentationAssistance = () => {
       <section className="py-16 px-4 bg-primary/5 mt-8">
         <div className="container mx-auto text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-olive mb-4">
-            Documentation Assistance
+            Get assistance to your most popular documents
           </h1>
           <p className="text-olive/80 max-w-2xl mx-auto">
-            Get expert help with preparing, filing, and tracking your important government documents and applications. We simplify the paperwork process for you.
+            Select the document you need help with and get step-by-step guidance for applications, renewals, and corrections.
           </p>
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Documents Grid Section */}
       <section className="py-16 px-4">
         <div className="container mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-olive text-center mb-12">
-            Our Documentation Services
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {documentServices.map((service) => (
-              <Card key={service.id} className="bg-white shadow-soft hover:shadow-medium transition-shadow border-t-4" style={{ borderTopColor: service.color }}>
-                <CardHeader className="pt-6">
-                  <div className="flex items-center gap-4">
-                    <div 
-                      className="w-12 h-12 rounded-full flex items-center justify-center"
-                      style={{ backgroundColor: `${service.color}20` }}
-                    >
-                      <div style={{ color: service.color }}>
-                        {service.icon}
-                      </div>
-                    </div>
-                    <h3 className="text-xl font-semibold text-olive">{service.title}</h3>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-olive/80 mb-4">{service.description}</p>
-                  <Button 
-                    className="w-full"
-                    style={{ backgroundColor: service.color, color: '#FDFCFB' }}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {popularDocuments.map((document) => (
+              <Card 
+                key={document.id} 
+                onClick={() => handleDocumentClick(document.id)}
+                className="bg-white/90 backdrop-blur-sm shadow-soft hover:shadow-medium transition-all duration-300 cursor-pointer group border-0 overflow-hidden"
+                style={{ 
+                  background: `linear-gradient(135deg, ${document.bgColor}15 0%, ${document.bgColor}08 100%)`,
+                }}
+              >
+                <CardContent className="p-8 text-center h-48 flex flex-col items-center justify-center">
+                  <div 
+                    className="w-20 h-20 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+                    style={{ 
+                      background: `linear-gradient(135deg, ${document.color}20 0%, ${document.color}10 100%)`,
+                      border: `2px solid ${document.color}30`
+                    }}
                   >
-                    Get Assistance
-                  </Button>
+                    <div style={{ color: document.color }}>
+                      {document.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-semibold text-olive group-hover:text-primary transition-colors duration-300">
+                    {document.title}
+                  </h3>
                 </CardContent>
               </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Common Documents Section */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="container mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-olive text-center mb-12">
-            Common Documents We Help With
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {commonDocuments.map((category, index) => (
-              <Card key={index} className="bg-white shadow-soft">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-olive mb-4">{category.category}</h3>
-                  <ul className="space-y-2">
-                    {category.documents.map((doc, docIndex) => (
-                      <li key={docIndex} className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-primary rounded-full"></div>
-                        <span className="text-olive/80 text-sm">{doc}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Steps Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-olive text-center mb-12">
-            How It Works
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {steps.map((step) => (
-              <div key={step.step} className="text-center">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-xl">{step.step}</span>
-                </div>
-                <h3 className="text-lg font-semibold text-olive mb-2">{step.title}</h3>
-                <p className="text-olive/80 text-sm">{step.description}</p>
-              </div>
             ))}
           </div>
         </div>
@@ -183,20 +161,20 @@ const DocumentationAssistance = () => {
       {/* Call to Action Section */}
       <section className="py-16 px-4">
         <div className="container mx-auto">
-          <div className="bg-accent/20 rounded-xl p-6 md:p-10 text-center">
+          <div className="bg-accent/20 rounded-xl p-6 md:p-10 text-center max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-olive mb-4">
-              Ready to Get Started?
+              Need Help with a Different Document?
             </h2>
-            <p className="text-olive/80 mb-8 max-w-2xl mx-auto">
-              Don't let paperwork hold you back. Our documentation experts are here to guide you through every step of the process.
+            <p className="text-olive/80 mb-8">
+              Our comprehensive documentation assistance covers hundreds of government documents and services. Get personalized help for any document you need.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-primary text-white px-8 py-3">
-                Start Documentation Process
-              </Button>
-              <Button variant="outline" className="px-8 py-3">
-                Download Checklist
-              </Button>
+              <button className="bg-primary text-white px-8 py-3 rounded-md hover:bg-primary/90 transition-colors">
+                Browse All Documents
+              </button>
+              <button className="border border-primary text-primary px-8 py-3 rounded-md hover:bg-primary/5 transition-colors">
+                Contact Support
+              </button>
             </div>
           </div>
         </div>
